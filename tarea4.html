@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mattrexx Gaming - Nota de Venta</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      margin: 0;
+      padding: 15px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: linear-gradient(rgba(34, 40, 49, 0.8), rgba(34, 40, 49, 0.8)), url(images/fondo.jpeg);
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url(images/profo.jpg);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 30px;
+    }
+
+    .company-info {
+      flex: 2;
+    }
+
+    .company-info h1 {
+      font-family: 'Times New Roman', Times, serif;
+      color: #2c3e50;
+      margin: 0 0 10px 0;
+      font-size: 28px;
+      border-bottom: 1px solid #34db7f;
+      padding-bottom: 5px;
+      display: inline-block;
+    }
+
+    .doc-info {
+      flex: 1;
+      text-align: right;
+    }
+
+    .nota-venta-box {
+      text-align: center;
+      font-family: 'Times New Roman', Times, serif;
+      border: 1px solid #34db7f;
+      padding: 1px;
+      border-radius: 15px;
+      background-color: #f8f9fa;
+      margin-bottom: 10px;
+    }
+
+    .fecha-box {
+      font-family: 'Times New Roman', Times, serif;
+      text-align: center;
+      border: 1px solid #34db7f;
+      background-color: #f8f9fa;
+      padding: 5px;
+      border-radius: 15px;
+    }
+
+    .fecha-box input[type="date"] {
+      text-align: center;
+      border: 1px solid #ddd;
+      padding: 5px;
+      border-radius: 4px;
+      width: 140px;
+    }
+
+    .cliente-info {
+      background-color: #f8f9fa;
+      border: 1px solid #34db7f;
+      border-radius: 20px;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+
+    .cliente-info input {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0 15px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .cliente-info label {
+      color: #2c3e50;
+      font-weight: 500;
+    }
+
+    table {
+      text-align: center;
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    th {
+      background-color: #34db7fc0;
+      color: white;
+      padding: 5px;
+      border: 1px solid #dee2e6;
+    }
+
+    td {
+      padding: 12px;
+      border: 1px solid #dee2e6;
+    }
+
+    select, input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .product-details {
+      margin-top: 10px;
+      font-size: 0.9em;
+    }
+
+    .product-details table {
+      margin: 0;
+      border: none;
+    }
+
+    .product-details td {
+      border: none;
+      padding: 5px;
+    }
+
+    .total-row {
+      background-color: #f8f9fa;
+      font-weight: bold;
+    }
+
+    .totales {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+    }
+
+    .totales-box {
+      width: 300px;
+      background-color: #f8f9fa;
+      padding: 5px;
+      border-radius: 15px;
+      border: 1px solid #34db7fc0;
+    }
+
+    .totales-box div {
+      display: flex;
+      justify-content: space-between;
+      margin: 5px 0;
+      padding: 5px 0;
+      border-bottom: 1px solid #dee2e6;
+    }
+
+    .btn-print {
+      background-color: #34db7fc0;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-bottom: 20px;
+    }
+
+    .btn-print:hover {
+      background-color: #2980b9;
+    }
+
+    .expedido-por {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #dee2e6;
+    }
+
+    .expedido-por input {
+      width: 200px;
+      padding: 8px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button class="btn-print" onclick="window.print()">IMPRIMIR</button>
+    
+    <div class="header">
+      <div class="company-info">
+        <h1>QuebetaGaming</h1>
+      </div>
+      <div class="doc-info">
+        <div class="nota-venta-box">
+          <h2 style="margin: 0;">NOTA DE VENTA</h2>
+        </div>
+        <div class="fecha-box">
+          <p style="margin: 0 0 0px 0;"> <b>FECHA</b></p>
+          <input type="date">
+        </div>
+      </div>
+    </div>
+
+    <div class="cliente-info">
+      <div>
+        <label>CLIENTE:</label>
+        <input type="text" placeholder="Nombre del cliente">
+      </div>
+      <div style="display: flex; gap: 20px;">
+        <div style="flex: 1;">
+          <label>TEL:</label>
+          <input type="tel" placeholder="Teléfono">
+        </div>
+        <div style="flex: 1;">
+          <label>E-MAIL:</label>
+          <input type="email" placeholder="Correo electrónico">
+        </div>
+      </div>
+      <div>
+        <label>DIRECCION:</label>
+        <input type="text" placeholder="Dirección">
+      </div>
+    </div>
+
+    <table>
+      <tr>
+        <th width="15%">CANTIDAD</th>
+        <th width="55%">DETALLES</th>
+        <th width="15%">PRECIO UNITARIO</th>
+        <th width="15%">SUBTOTAL</th>
+      </tr>
+      <tr>
+        <td><input type="number" id="cant1" onkeyup="calcular()" value="0"></td>
+        <td>
+          <select name="det1" id="det1" onchange="mostrar1()">
+            <option>PLACA MADRE</option>
+            <option value="P01">ASUS</option>
+            <option value="P02">TUF GAMING</option>
+          </select>
+          <div id="desc1" class="product-details"></div>
+        </td>
+        <td><input type="number" id="pu1" onkeyup="calcular()" value="0"></td>
+        <td><input type="number" id="subt1" value="0" readonly></td>
+      </tr>
+      <tr>
+        <td><input type="number" id="cant2" onkeyup="calcular()" value="0"></td>
+        <td>
+          <select name="det2" id="det2" onchange="mostrar2()">
+            <option>PROCESADOR</option>
+            <option value="P01">AMD</option>
+            <option value="P02">INTEL</option>
+          </select>
+          <div id="desc2" class="product-details"></div>
+        </td>
+        <td><input type="number" id="pu2" onkeyup="calcular()" value="0"></td>
+        <td><input type="number" id="subt2" value="0" readonly></td>
+      </tr>
+      <tr>
+        <td><input type="number" id="cant3" onkeyup="calcular()" value="0"></td>
+        <td>
+          <select name="det3" id="det3" onchange="mostrar3()">
+            <option>M.2 DISCO RIGIDO</option>
+            <option value="P01">SAMSUMG</option>
+            <option value="P02">CRUCIAL</option>
+          </select>
+          <div id="desc3" class="product-details"></div>
+        </td>
+        <td><input type="number" id="pu3" onkeyup="calcular()" value="0"></td>
+        <td><input type="number" id="subt3" value="0" readonly></td>
+      </tr>
+      <tr>
+        <td><input type="number" id="cant4" onkeyup="calcular()" value="0"></td>
+        <td>
+          <select name="det4" id="det4" onchange="mostrar4()">
+            <option>REFRIGERACION LIQUIDA</option>
+            <option value="P01">DEPPCOOL</option>
+            <option value="P02">REDRAGON</option>
+          </select>
+          <div id="desc4" class="product-details"></div>
+        </td>
+        <td><input type="number" id="pu4" onkeyup="calcular()" value="0"></td>
+        <td><input type="number" id="subt4" value="0" readonly></td>
+      </tr>
+      <tr>
+        <td><input type="number" id="cant5" onkeyup="calcular()" value="0"></td>
+        <td>
+          <select name="det5" id="det5" onchange="mostrar5()">
+            <option>FUENTE</option>
+            <option value="P01">ROG STRIX</option>
+            <option value="P02">DEPPCOOL</option>
+          </select>
+          <div id="desc5" class="product-details"></div>
+        </td>
+        <td><input type="number" id="pu5" onkeyup="calcular()" value="0"></td>
+        <td><input type="number" id="subt5" value="0" readonly></td>
+      </tr>
+      <tr class="total-row">
+        <th colspan="3" style="text-align: right;">TOTAL:</th>
+        <td><input type="number" id="total" readonly></td>
+      </tr>
+    </table>
+
+    <div class="totales">
+      <div class="totales-box">
+        <div>
+          <span>SUB-TOTAL $</span>
+          <input type="number" id="subtotal" readonly>
+        </div>
+        <div>
+          <span>I.V.A. (16%) $</span>
+          <input type="number" id="iva" readonly>
+        </div>
+        <div>
+          <span>TOTAL $</span>
+          <input type="number" id="total_final" readonly>
+        </div>
+      </div>
+    </div>
+
+    <div class="expedido-por">
+      <label>EXPEDIDO POR:</label>
+      <input type="text">
+    </div>
+  </div>
+
+  <script>
+    function calcular() {
+      var cant1 = parseInt(document.getElementById("cant1").value) || 0;
+      var pu1 = parseFloat(document.getElementById("pu1").value) || 0;
+      document.getElementById("subt1").value = (pu1*cant1);
+
+      var cant2 = parseInt(document.getElementById("cant2").value) || 0;
+      var pu2 = parseFloat(document.getElementById("pu2").value) || 0;
+      document.getElementById("subt2").value = (pu2*cant2);
+
+      var cant3 = parseInt(document.getElementById("cant3").value) || 0;
+      var pu3 = parseFloat(document.getElementById("pu3").value) || 0;
+      document.getElementById("subt3").value = (pu3*cant3);
+
+      var cant4 = parseInt(document.getElementById("cant4").value) || 0;
+      var pu4 = parseFloat(document.getElementById("pu4").value) || 0;
+      document.getElementById("subt4").value = (pu4*cant4);
+
+      var cant5 = parseInt(document.getElementById("cant5").value) || 0;
+      var pu5 = parseFloat(document.getElementById("pu5").value) || 0;
+      document.getElementById("subt5").value = (pu5*cant5);
+
+      var subtotal = (pu1*cant1)+(pu2*cant2)+(pu3*cant3)+(pu4*cant4)+(pu5*cant5);
+      document.getElementById("subtotal").value = subtotal;
+      document.getElementById("total").value = subtotal;
+      
+      var iva = subtotal * 0.16;
+      document.getElementById("iva").value = iva;
+      
+      var total_final = subtotal + iva;
+      document.getElementById("total_final").value = total_final;
+    }
+
+    function mostrar1() {
+      indice = document.getElementById("det1").selectedIndex;
+      switch (indice) {
+        case 1:
+            detalles = "<table>"+
+                        '<tr><td rowspan="3"><img src="/images/pc/pc1.png" width="120px" alt="Producto 1"></td><td>Placa Madre asus B550 Sochet AMD</td></tr>'+
+                        "<tr><td>PCi 4.0 de 16</td></tr>"+
+                        "<tr><td>Entrada de USB 3.5, audio HiFi Res, Display Port</td></tr>"+
+                      "</table>";
+          break;
+        case 2:
+        detalles = "<table>"+
+                        '<tr><td rowspan="3"><img src="/images/pc/pc2.jpeg" width="120px" alt="Product 2"></td><td>Placa Madre TufGaming</td></tr>'+
+                        "<tr><td>PCi 4.0 de 16</td></tr>"+
+                        "<tr><td>Entrada de USB 3.5, audio HiFi Res, Display Port</td></tr>"+
+                      "</table>";
+          break;        
+        default:
+        detalles = "";
+      }
+      document.getElementById("desc1").innerHTML=detalles;
+    }
+
+    function mostrar2() {
+      indice = document.getElementById("det2").selectedIndex;
+      switch (indice) {
+        case 1:
+            detalles = "<table>"+
+                        '<tr><td rowspan="3"><img src="/images/pc/pc3.jpg" width="120px" alt="Product 1"></td><td>AMD Ryzen 7</td></tr>'+
+                        "<tr><td>Serie 5700 g </td></tr>"+
+                        "<tr><td>4 Nucleos 8 Hilos</td></tr>"+
+                      "</table>";
+          break;
+        case 2:
+        detalles = "<table>"+
+                        '<tr><td rowspan="3"><img src="/images/pc/pc4.jpg" width="120px" alt="Product 2"></td><td>Intel Core i9</td></tr>'+
+                        "<tr><td>Serie 5700 g</td></tr>"+
+                        "<tr><td>4 Nucleos 8 Hilos</td></tr>"+
+                      "</table>";
+          break;        
+        default:
+        detalles = "";
+      }
+      document.getElementById("desc2").innerHTML=detalles;
+    }
+    function mostrar3() {
+      indice = document.getElementById("det3").selectedIndex;
+      switch (indice) {
+        case 1:
+            detalles = "<table>"+
+                        '<tr><td rowspan="3"><img src="/images/pc/pc6.jpg" width="120px" alt="Product 1"></td><td>Samsung Pro</td></tr>'+
+                        "<tr><td>EVO 900</td></tr>"+
+                        "<tr><td>100 Mb por Segundo</td></tr>"+
+                      "</table>";
+          break;
+        case 2:
+        detalles = "<table>"+
+                        '<tr><td rowspan="3"><img src="/images/pc/pc5.png" width="120px" alt="Product 2"></td><td>Crucial</td></tr>'+
+                        "<tr><td>Cru. 580 Pro</td></tr>"+
+                        "<tr><td>100 Mb por Segundo</td></tr>"+
+                      "</table>";
+          break;        
+        default:
+        detalles = "";
+      }
+      document.getElementById("desc3").innerHTML=detalles;
+    }
+    function mostrar4() {
+      indice = document.getElementById("det4").selectedIndex;
+      switch (indice) {
+        case 1:
+            detalles = "<table>"+
+                        '<tr><td rowspan="3"><img src="/images/pc/pc7.jpg" width="120px" alt="Product 1"></td><td>Refrigeracion Liquida Deppcoll</td></tr>'+
+                        "<tr><td>360 ATX</td></tr>"+
+                        "<tr><td>120 RPM</td></tr>"+
+                      "</table>";
+          break;
+        case 2:
+        detalles = "<table>"+
+                        '<tr><td rowspan="3"><img src="/images/pc/pc8.jpg" width="120px" alt="Product 2"></td><td>Refrigeracion Liquida ReDragon</td></tr>'+
+                        "<tr><td>360 ATX</td></tr>"+
+                        "<tr><td>120 RPM</td></tr>"+
+                      "</table>";
+          break;        
+        default:
+        detalles = "";
+      }
+      document.getElementById("desc4").innerHTML=detalles;
+    }
+    function mostrar5() {
+      indice = document.getElementById("det5").selectedIndex;
+      switch (indice) {
+        case 1:
+            detalles = "<table>"+
+                        '<tr><td rowspan="3"><img src="/images/pc/pc10.jpg" width="120px" alt="Product 1"></td><td>Fuente de Poder Modular</td></tr>'+
+                        "<tr><td>80 Plus Gold</td></tr>"+
+                        "<tr><td>220 Volts</td></tr>"+
+                      "</table>";
+          break;
+        case 2:
+        detalles = "<table>"+
+                        '<tr><td rowspan="3"><img src="/images/pc/pc9.jpg" width="120px" alt="Product 2"></td><td>Fuente de Poder Semi Modular</td></tr>'+
+                        "<tr><td>80 Plus Gold</td></tr>"+
+                        "<tr><td>220 Volts</td></tr>"+
+                      "</table>";
+          break;        
+        default:
+        detalles = "";
+      }
+      document.getElementById("desc5").innerHTML=detalles;
+    }
+  </script>
+</body>
+</html>
